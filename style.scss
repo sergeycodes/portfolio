@@ -45,14 +45,14 @@ img {
     display: center;
     justify-content: space-between;
     color: #fff;
-    overflow: hidden;
     width: 100vw;
     align-items: center;
     padding: 1.5rem;
     backdrop-filter: blur(1.5rem);
-    z-index: 10;
+    z-index: 10000;
     
     .primary-navigation {
+      z-index: 1000;
         list-style: none;
         justify-content: center;
         padding: 0;
@@ -108,38 +108,63 @@ img {
     overflow: hidden;
   }
 
+  .page-width {
+    width: 80vw;
+    margin-left: 10vw;
+  }
+
   .welcome-container {
     position: relative;
-    height: 90vh;
-    width: 800px;
-    margin-top: 11vh;
-    border: 1px solid green;
+    height: 88vh;
+    
+    margin-top: 12vh;
 
     .welcome {
-        height: 80vh;
+        height: 88vh;
         width: 100%;
         position: absolute;
-        border: 1px solid red;
     }
   }
 
   .project-container {
-    height: 90vh;
-    border: 1px solid blue;
+    height: 100vh;
+    width: 80vw;
 
-    h1 {
-      text-align: center;
+    
+
+    article {
+      position: relative;
+      width: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+      
+      h1 {
+        text-align: center;
+        font-size: 3em;
+      }
+
+      p {
+        text-indent: 1.5em;
+        font-size: 1.5em;
+      }
     }
   }
 
   .all-projects {
+    position: relative;
     display: flex;
     width: 100%;
-    border: 1px solid red;
     justify-content: space-around;
-    margin-top: 20vh;
+    margin-top: 10vh;
+    margin-bottom: 15vh;
   }
 
+  .display {
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  }
+  
   .btn-container {
     display: flex;
     width: 100%;
@@ -166,11 +191,6 @@ img {
     -webkit-font-smoothing: antialiased;
   }
   
-  .display {
-    position: relative;
-    width: 12.5em;
-    cursor: pointer;
-  }
   
   .projects {
     display: flex;
@@ -201,6 +221,7 @@ img {
   
     .thumbnail {
       border-radius: var(--br);
+      height: 250px;
     }
   
     .name {
@@ -224,7 +245,12 @@ img {
       font-size: 0.75em;
       margin-right: 0.5em;
     }
-  
+
+    .inprogress {
+      color: rgb(250, 69, 69);
+      font-size: .75em;
+    }
+
     .projects img {
       border: 2px solid var(--clr-dark);
   
@@ -286,6 +312,7 @@ img {
   }
   
   .display:hover {
+    box-shadow: none;
     .rank {
       transform: translate(150%, -61%);
     }
@@ -426,17 +453,184 @@ img {
   }
 
   .about-container {
-    height: 100vh;
+    position: relative;
+    height: 90vh;
+    width: 80vw;
+    margin-top: 2em;
+
+    article {
+      position: relative;
+      width: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      h1 {
+        text-align: center;
+        font-size: 3em;
+      }
+
+      p {
+        text-indent: 1.5em;
+        font-size: 1.5em;
+      }
+    }
+
   }
 
   .contact-container {
-    height: 100vh;
+    position: relative;
+    height: 90vh;
+    width: 80vw;
+
+    article {
+      position: relative;
+      width: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 2em;
+
+      h1 {
+        text-align: center;
+        font-size: 3em;
+      }
+
+      p {
+        text-indent: 1.5em;
+        font-size: 1.5em;
+      }
+    }
+    
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .invert {
+      filter: invert(1);
+    }
+
+    .contact-info {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      
+      .social-list {
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+        .underline {
+          font-size: 1.25em;
+        }
+
+        .underline::after {
+          position: absolute;
+          display: block;
+          content: "";
+          width: 3em;
+          border-bottom: 1px solid white;
+        }
+
+        ul {
+          align-items: center;
+          
+          li {
+            list-style: none;
+            padding: 1em;
+          }
+        }
+      }
+    }
+
+    .contactForm {
+      position: relative;
+      width: 50%;
+      padding: 40px;
+      background: #fff;
+      border-radius: 10px;
+    }
+    
+    .contactForm h2 {
+      font-size: 30px;
+      color: #333;
+      font-weight: 500;
+    }
+    
+    .contactForm .inputBox {
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
+    }
+    
+    .contactForm .inputBox input, 
+    .contactForm .inputBox textarea {
+      width: 100%;
+      padding: 5px 0;
+      font-size: 16px;
+      margin: 10px 0;
+      border: none;
+      border-bottom: 2px solid #333;
+      outline: none;
+      resize: none;
+    }
+    
+    .contactForm .inputBox span {
+      position: absolute;
+      left: 0;
+      padding: 5px 0;
+      font-size: 16px;
+      margin: 10px 0;
+      pointer-events: none;
+      transition: 0.5s;
+      color: #666;
+    }
+    
+    .contactForm .inputBox input:focus ~ span,
+    .contactForm .inputBox input:valid ~ span, 
+    .contactForm .inputBox textarea:focus ~ span,
+    .contactForm .inputBox textarea:valid ~ span {
+      color: #e91e63;
+      font-size: 12px;
+      transform: translateY(-20px);
+    }
+    
+    .contactForm .inputBox input[type="submit"] {
+      width: 100px;
+      background: var(--clr-dark);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px; 
+      font-size: 18px;
+      border-radius: 4px;
+    }
   }
 
- 
+  
 
   .projects .white {
     background-color: #fff;
+  }
+
+  .resume-container {
+    height: 89vh;
+    width: 80vw;
+
+    h1 {
+      text-align: center;
+    }
+    .resume-btn {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 2em;
+
+      button {
+        height: 3em;
+        width: 10em;
+      }
+    }
   }
 
 @media (max-width: 35em) {
@@ -476,23 +670,27 @@ img {
   
     .primary-navigation {
         --gap: 2rem;
-        z-index: 1000;
-        position: fixed;
-        inset: 0 0 0 30%;
+        z-index: 10000;
+        position: absolute;
+        inset: 0 0 0 80%;
         margin-bottom: -100px;
-
+        height: 100vh;
 
         padding: min(30vh,  10rem) 2em;
         flex-direction: column;
         background: hsl(0 0% 100% / .1);
-        backdrop-filter: blur(1rem); 
+        
 
         transform: translateX(100%);
         transition: transform 350ms ease-out;
         
+        ul {
+          backdrop-filter: blur(1.5rem); 
+        }
 
         li{
             display: block;
+            
         }
         
     }
@@ -505,6 +703,7 @@ img {
         display: block;
         position: absolute;
         background: url("images/menu.png");
+        filter: invert(1);
         width: 2rem;
         background-repeat: no-repeat;
         border: none;
@@ -516,6 +715,7 @@ img {
 
     .mobile-nav-toggle[aria-expanded=true] {
         background: url("images/cancel.png");
+        filter: invert(1);
         background-repeat: no-repeat;
     }
 

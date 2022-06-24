@@ -42,15 +42,15 @@ img {
   display: center;
   justify-content: space-between;
   color: #fff;
-  overflow: hidden;
   width: 100vw;
   align-items: center;
   padding: 1.5rem;
   -webkit-backdrop-filter: blur(1.5rem);
           backdrop-filter: blur(1.5rem);
-  z-index: 10;
+  z-index: 10000;
 }
 .navbar .primary-navigation {
+  z-index: 1000;
   list-style: none;
   justify-content: center;
   padding: 0;
@@ -100,34 +100,54 @@ img {
   overflow: hidden;
 }
 
+.page-width {
+  width: 80vw;
+  margin-left: 10vw;
+}
+
 .welcome-container {
   position: relative;
-  height: 90vh;
-  width: 800px;
-  margin-top: 11vh;
-  border: 1px solid green;
+  height: 88vh;
+  margin-top: 12vh;
 }
 .welcome-container .welcome {
-  height: 80vh;
+  height: 88vh;
   width: 100%;
   position: absolute;
-  border: 1px solid red;
 }
 
 .project-container {
-  height: 90vh;
-  border: 1px solid blue;
+  height: 100vh;
+  width: 80vw;
 }
-.project-container h1 {
+.project-container article {
+  position: relative;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.project-container article h1 {
   text-align: center;
+  font-size: 3em;
+}
+.project-container article p {
+  text-indent: 1.5em;
+  font-size: 1.5em;
 }
 
 .all-projects {
+  position: relative;
   display: flex;
   width: 100%;
-  border: 1px solid red;
   justify-content: space-around;
-  margin-top: 20vh;
+  margin-top: 10vh;
+  margin-bottom: 15vh;
+}
+
+.display {
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
 }
 
 .btn-container {
@@ -154,12 +174,6 @@ img {
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-}
-
-.display {
-  position: relative;
-  width: 12.5em;
-  cursor: pointer;
 }
 
 .projects {
@@ -191,6 +205,7 @@ img {
 }
 .front .thumbnail {
   border-radius: var(--br);
+  height: 250px;
 }
 .front .name {
   margin: 0.75em 0;
@@ -209,6 +224,10 @@ img {
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.75em;
   margin-right: 0.5em;
+}
+.front .inprogress {
+  color: rgb(250, 69, 69);
+  font-size: 0.75em;
 }
 .front .projects img {
   border: 2px solid var(--clr-dark);
@@ -268,6 +287,9 @@ img {
      object-fit: cover;
 }
 
+.display:hover {
+  box-shadow: none;
+}
 .display:hover .rank {
   transform: translate(150%, -61%);
 }
@@ -403,15 +425,159 @@ img {
 }
 
 .about-container {
-  height: 100vh;
+  position: relative;
+  height: 90vh;
+  width: 80vw;
+  margin-top: 2em;
+}
+.about-container article {
+  position: relative;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about-container article h1 {
+  text-align: center;
+  font-size: 3em;
+}
+.about-container article p {
+  text-indent: 1.5em;
+  font-size: 1.5em;
 }
 
 .contact-container {
-  height: 100vh;
+  position: relative;
+  height: 90vh;
+  width: 80vw;
+}
+.contact-container article {
+  position: relative;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2em;
+}
+.contact-container article h1 {
+  text-align: center;
+  font-size: 3em;
+}
+.contact-container article p {
+  text-indent: 1.5em;
+  font-size: 1.5em;
+}
+.contact-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.contact-container .invert {
+  filter: invert(1);
+}
+.contact-container .contact-info {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.contact-container .contact-info .social-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.contact-container .contact-info .social-list .underline {
+  font-size: 1.25em;
+}
+.contact-container .contact-info .social-list .underline::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 3em;
+  border-bottom: 1px solid white;
+}
+.contact-container .contact-info .social-list ul {
+  align-items: center;
+}
+.contact-container .contact-info .social-list ul li {
+  list-style: none;
+  padding: 1em;
+}
+.contact-container .contactForm {
+  position: relative;
+  width: 50%;
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+}
+.contact-container .contactForm h2 {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+}
+.contact-container .contactForm .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+.contact-container .contactForm .inputBox input,
+.contact-container .contactForm .inputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  resize: none;
+}
+.contact-container .contactForm .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+.contact-container .contactForm .inputBox input:focus ~ span,
+.contact-container .contactForm .inputBox input:valid ~ span,
+.contact-container .contactForm .inputBox textarea:focus ~ span,
+.contact-container .contactForm .inputBox textarea:valid ~ span {
+  color: #e91e63;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+.contact-container .contactForm .inputBox input[type=submit] {
+  width: 100px;
+  background: var(--clr-dark);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 4px;
 }
 
 .projects .white {
   background-color: #fff;
+}
+
+.resume-container {
+  height: 89vh;
+  width: 80vw;
+}
+.resume-container h1 {
+  text-align: center;
+}
+.resume-container .resume-btn {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 2em;
+}
+.resume-container .resume-btn button {
+  height: 3em;
+  width: 10em;
 }
 
 @media (max-width: 35em) {
@@ -447,17 +613,20 @@ img {
 
   .primary-navigation {
     --gap: 2rem;
-    z-index: 1000;
-    position: fixed;
-    inset: 0 0 0 30%;
+    z-index: 10000;
+    position: absolute;
+    inset: 0 0 0 80%;
     margin-bottom: -100px;
+    height: 100vh;
     padding: min(30vh, 10rem) 2em;
     flex-direction: column;
     background: hsla(0deg, 0%, 100%, 0.1);
-    -webkit-backdrop-filter: blur(1rem);
-            backdrop-filter: blur(1rem);
     transform: translateX(100%);
     transition: transform 350ms ease-out;
+  }
+  .primary-navigation ul {
+    -webkit-backdrop-filter: blur(1.5rem);
+            backdrop-filter: blur(1.5rem);
   }
   .primary-navigation li {
     display: block;
@@ -471,6 +640,7 @@ img {
     display: block;
     position: absolute;
     background: url("images/menu.png");
+    filter: invert(1);
     width: 2rem;
     background-repeat: no-repeat;
     border: none;
@@ -482,6 +652,7 @@ img {
 
   .mobile-nav-toggle[aria-expanded=true] {
     background: url("images/cancel.png");
+    filter: invert(1);
     background-repeat: no-repeat;
   }
 
