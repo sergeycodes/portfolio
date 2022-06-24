@@ -49,8 +49,8 @@ img {
     width: 100vw;
     align-items: center;
     padding: 1.5rem;
-    backdrop-filter: blur(1rem);
-    z-index: 1;
+    backdrop-filter: blur(1.5rem);
+    z-index: 10;
     
     .primary-navigation {
         list-style: none;
@@ -67,7 +67,7 @@ img {
 
         a {
             text-decoration: none;
-            color: black;
+            color: rgb(216, 216, 216);
         }
 
         a::after {
@@ -93,52 +93,7 @@ img {
         display: none;
 }
 
-@media (max-width: 35em) {
-    .primary-navigation {
-        --gap: 2rem;
-        z-index: 1000;
-        position: fixed;
-        inset: 0 0 0 30%;
-        margin-bottom: -100px;
 
-
-        padding: min(30vh,  10rem) 2em;
-        flex-direction: column;
-        background: hsl(0 0% 100% / .1);
-        backdrop-filter: blur(1rem); 
-
-        transform: translateX(100%);
-        transition: transform 350ms ease-out;
-        
-
-        li{
-            display: block;
-        }
-        
-    }
-
-    .primary-navigation[data-visible=true] {
-        transform: translateX(0%);
-    }
-
-    .mobile-nav-toggle {
-        display: block;
-        position: absolute;
-        background: url("images/menu.png");
-        width: 2rem;
-        background-repeat: no-repeat;
-        border: none;
-        aspect-ratio: 1;
-        top: 2rem;
-        right: 2rem;
-        z-index: 9999;
-    }
-
-    .mobile-nav-toggle[aria-expanded=true] {
-        background: url("images/cancel.png");
-        background-repeat: no-repeat;
-    }
-}
 
 .flex {
     display: flex;
@@ -156,8 +111,7 @@ img {
   .welcome-container {
     position: relative;
     height: 90vh;
-    width: 75vw;
-    min-width: 800px;
+    width: 800px;
     margin-top: 11vh;
     border: 1px solid green;
 
@@ -172,6 +126,24 @@ img {
   .project-container {
     height: 90vh;
     border: 1px solid blue;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .all-projects {
+    display: flex;
+    width: 100%;
+    border: 1px solid red;
+    justify-content: space-around;
+    margin-top: 20vh;
+  }
+
+  .btn-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .btn {
@@ -181,7 +153,7 @@ img {
     border-radius: 100vw;
     color: var(--clr-light);
     font-weight: bold;
-    padding: 0.5em 1.5em;
+    padding: 0.5em 0.75em;
   }
   
   .icon::before {
@@ -194,13 +166,13 @@ img {
     -webkit-font-smoothing: antialiased;
   }
   
-  .game {
+  .display {
     position: relative;
     width: 12.5em;
     cursor: pointer;
   }
   
-  .streamers {
+  .projects {
     display: flex;
     text-align: center;
   
@@ -253,7 +225,7 @@ img {
       margin-right: 0.5em;
     }
   
-    .streamers img {
+    .projects img {
       border: 2px solid var(--clr-dark);
   
       &:nth-of-type(1) {
@@ -262,6 +234,7 @@ img {
       }
   
       &:nth-of-type(2) {
+        border: 2px solid var(--clr-dark);
         transform: translateX(25%);
       }
     }
@@ -279,19 +252,14 @@ img {
     gap: 1.5em;
     transform: translateY(35%);
   
-    .streaming-info {
-      columns: 2;
+    .project-info {
+      columns: 1;
       column-rule: 1px solid rgba(255, 255, 255, 0.25);
     }
   
-    .game-stat {
-      font-size: 1.125rem;
+    .project-description {
+      font-size: 0.75rem;
       text-align: center;
-  
-      span {
-        font-size: 0.85rem;
-        display: block;
-      }
     }
   }
   
@@ -317,7 +285,7 @@ img {
     }
   }
   
-  .game:hover {
+  .display:hover {
     .rank {
       transform: translate(150%, -61%);
     }
@@ -326,7 +294,7 @@ img {
       transform: translateY(-30%) scale(0.8);
   
       .name {
-        animation: gameName 250ms forwards;
+        animation: displayName 250ms forwards;
       }
   
       .stats {
@@ -340,12 +308,12 @@ img {
   
       transform: translateY(0);
   
-      .streamers {
+      .projects {
         width: 100%;
         justify-content: space-between;
       }
   
-      .streamer {
+      .project {
         font-size: 0.9rem;
       }
   
@@ -361,7 +329,7 @@ img {
     }
   }
   
-  @keyframes gameName {
+  @keyframes displayName {
     0% {
       text-align: left;
       opacity: 1;
@@ -385,7 +353,7 @@ img {
     }
   }
   
-  .streamer {
+  .project {
     .icon {
       display: inline-block;
       width: 2em;
@@ -402,50 +370,59 @@ img {
         right: 0;
         left: 0;
         border-radius: 50%;
-      }
-      &::before {
-        content: "\f04b";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        font-size: 0.65em;
-        background: #f00;
-        display: grid;
-        place-items: center;
-        z-index: 10;
-        transition: opacity 75ms linear, background-color 100ms linear;
-      }
-      &:hover {
-        transform: translateY(-15%) scale(1.2);
-        &::before {
-          background: #cc0202;
-        }
-        &::after {
-          background: #f00;
-          z-index: 1;
-          animation: pulse 1250ms infinite;
-        }
-      }
-    }
-    &:hover {
-      .icon {
-        transform: translateY(-10%);
-        &::before {
-          opacity: 1;
-        }
+
       }
     }
   }
   
-  @keyframes pulse {
-    0% {
-      transform: scale(0.95);
-      opacity: 0.9;
+  .tech-stack {
+
+    ul {
+      position: relative;
+      display: flex;
+      list-style: none;
+      width: min-content;
+
+      .text-title::after {
+        position: absolute;
+          content: "";
+          left: 7.5em;
+          top: 0.75em;
+          height: 3em;
+          border-right: 1px solid white;
+        }
+
+      li {
+
+        
+
+        div {
+          position: relative;
+          display: center;
+          
+          img {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+        
+        padding: 0 3rem 0 0;
+        img {
+        
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        }
+      }
     }
-  
-    100% {
-      transform: scale(1.4);
-      opacity: 0;
-    }
+
+    margin-top: 4rem;
+    
+  }
+
+  .white {
+    background-color: #fff;
   }
 
   .about-container {
@@ -454,4 +431,112 @@ img {
 
   .contact-container {
     height: 100vh;
+  }
+
+ 
+
+  .projects .white {
+    background-color: #fff;
+  }
+
+@media (max-width: 35em) {
+
+  body {
+    position: center;
+  }
+  .welcome-container {
+    justify-content: center;
+    width: 25em;
+
+    .welcome {
+      text-align: center;
+      height: auto;
+    }
+  }
+
+  .project-container {
+    width: 25em;
+    height: auto;
+
+    .all-projects {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .display {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 2.5em;
+    }
+  }
+    
+  
+    .primary-navigation {
+        --gap: 2rem;
+        z-index: 1000;
+        position: fixed;
+        inset: 0 0 0 30%;
+        margin-bottom: -100px;
+
+
+        padding: min(30vh,  10rem) 2em;
+        flex-direction: column;
+        background: hsl(0 0% 100% / .1);
+        backdrop-filter: blur(1rem); 
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+        
+
+        li{
+            display: block;
+        }
+        
+    }
+
+    .primary-navigation[data-visible=true] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background: url("images/menu.png");
+        width: 2rem;
+        background-repeat: no-repeat;
+        border: none;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+    }
+
+    .mobile-nav-toggle[aria-expanded=true] {
+        background: url("images/cancel.png");
+        background-repeat: no-repeat;
+    }
+
+    .tech-stack {
+      ul {
+        display: block;
+
+        .text-title::after {
+          
+          border-right: none;
+          display: inline;
+          width: 3em;
+          border-bottom: 1px solid white;
+          left: 2.75em;
+          top: 1.75em;
+        }
+
+        li {
+          margin-bottom: 1em;
+        }
+      }
+      
+    }
   }
