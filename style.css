@@ -24,6 +24,8 @@ body {
   overflow-x: hidden;
   background: var(--clr-dark);
   color: var(--clr-light);
+  background: url(images/space.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 h1,
@@ -117,8 +119,10 @@ img {
 }
 
 .project-container {
+  background: var(--clr-dark);
   height: 100vh;
   width: 80vw;
+  padding: 2rem;
 }
 .project-container article {
   position: relative;
@@ -252,6 +256,7 @@ img {
   align-items: center;
   gap: 1.5em;
   transform: translateY(35%);
+  z-index: 10000000;
 }
 .back .project-info {
   -moz-columns: 1;
@@ -289,6 +294,7 @@ img {
 
 .display:hover {
   box-shadow: none;
+  z-index: 1;
 }
 .display:hover .rank {
   transform: translate(150%, -61%);
@@ -384,7 +390,9 @@ img {
 }
 
 .tech-stack {
-  margin-top: 4rem;
+  margin-top: 0rem;
+  margin-bottom: 2em;
+  border: 1px solid red;
 }
 .tech-stack ul {
   position: relative;
@@ -425,10 +433,12 @@ img {
 }
 
 .about-container {
+  background: var(--clr-dark);
+  padding: 2rem;
   position: relative;
   height: 90vh;
   width: 80vw;
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 .about-container article {
   position: relative;
@@ -446,6 +456,9 @@ img {
 }
 
 .contact-container {
+  background: var(--clr-dark);
+  padding: 2rem;
+  margin-top: 2rem;
   position: relative;
   height: 90vh;
   width: 80vw;
@@ -562,6 +575,9 @@ img {
 }
 
 .resume-container {
+  background: var(--clr-dark);
+  padding: 2rem;
+  margin-top: 2rem;
   height: 89vh;
   width: 80vw;
 }
@@ -601,14 +617,15 @@ img {
   .project-container .all-projects {
     position: relative;
     display: block;
-    width: 100%;
     height: auto;
   }
   .project-container .display {
     position: relative;
+    display: block;
+    margin-bottom: 2.5em;
+    width: 50%;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 2.5em;
   }
 
   .primary-navigation {
@@ -658,6 +675,8 @@ img {
 
   .tech-stack ul {
     display: block;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .tech-stack ul .text-title::after {
     border-right: none;
@@ -669,5 +688,9 @@ img {
   }
   .tech-stack ul li {
     margin-bottom: 1em;
+  }
+  .tech-stack ul img {
+    position: relative;
+    margin-left: -15%;
   }
 }/*# sourceMappingURL=style.css.map */
