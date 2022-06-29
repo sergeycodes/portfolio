@@ -183,18 +183,29 @@ img {
          
         }
 
-       
+       .h2 {
+        position: absolute;
+        right: -5px;
+        top: 90px;
+       }
 
-        h2 {
-          position: absolute;
+        .h2-animation {
+          display: none;
+          position: relative;
           font-size: 8em;
-          right: -5px;
-          top: 90px;
           letter-spacing: 8px;
+
           overflow: hidden;
           white-space: nowrap;
-          width: min-content;
+          
+          animation: typing 1s steps(100, end), blink .75s step-end infinite;
+          animation-delay: 2s;
           border: 1px solid red;
+        }
+
+        @keyframes typing {
+          from{width: 0;}
+          to{width: 100%;}
         }
         
 

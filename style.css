@@ -170,18 +170,31 @@ img {
     width: 100%;
   }
 }
-.welcome-message h2 {
+.welcome-message .h2 {
   position: absolute;
-  font-size: 8em;
   right: -5px;
   top: 90px;
+}
+.welcome-message .h2-animation {
+  display: none;
+  position: relative;
+  font-size: 8em;
   letter-spacing: 8px;
   overflow: hidden;
   white-space: nowrap;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
+  -webkit-animation: typing 1s steps(100, end), blink 0.75s step-end infinite;
+          animation: typing 1s steps(100, end), blink 0.75s step-end infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
   border: 1px solid red;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 .welcome-message h4 {
   position: absolute;

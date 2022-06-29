@@ -16,6 +16,23 @@ NavToggle.addEventListener('click', ()=> {
     }
 })
 
+
+var h2_timer;
+
+h2_timer = setInverval(function () {
+    h2animation()
+}, 2000);
+
+function stop_h2timer() {
+    clearInterval(h2_timer)
+}
+
+const h2 = document.querySelector('h2-animation')
+
+function h2animation() {
+    h2.style.display = "flex"
+}
+
 var inverval_timer;
 
 //Time in milliseconds [1 second = 1000 milliseconds ]    
