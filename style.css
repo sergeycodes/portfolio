@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:ital,wght@0,300;0,500;0,700;0,900;1,500&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,900;1,400&display=swap");
 *,
 *::before,
 *::after {
@@ -50,6 +51,8 @@ img {
   -webkit-backdrop-filter: blur(1.5rem);
           backdrop-filter: blur(1.5rem);
   z-index: 10000;
+  top: -11vh;
+  transition: 1s;
 }
 .navbar .primary-navigation {
   z-index: 1000;
@@ -108,17 +111,94 @@ img {
 }
 
 .welcome-container {
-  position: relative;
-  height: 88vh;
-  margin-top: 12vh;
+  position: absolute;
+  /*height: 88vh;*/
+  /*margin-top: 12vh;*/
+  height: 100vh;
+  width: 100vw;
+  background: var(--clr-dark);
 }
 .welcome-container .welcome {
-  height: 88vh;
-  width: 100%;
+  position: relative;
+  width: 600px;
+  left: 30vw;
+  top: 12vh;
+}
+
+.welcome-message {
   position: absolute;
+  width: 600px;
+  left: 30vw;
+  top: 12vh;
+  display: inline-block;
+}
+.welcome-message h1 {
+  /*font-size: 20em;
+  font-weight: 500;
+
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  /*margin: 0 auto;  Gives that scrolling effect as the typing happens */
+  /* letter-spacing: ; Adjust as needed 
+
+  animation: 
+    typing 1s steps(10, end) 1s 1 normal both;*/
+  font-size: 20em;
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 2px;
+  -webkit-animation: typing 2s steps(100, end), blink 0.75s step-end infinite;
+          animation: typing 2s steps(100, end), blink 0.75s step-end infinite;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.welcome-message h2 {
+  position: absolute;
+  font-size: 8em;
+  right: -5px;
+  top: 90px;
+  letter-spacing: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  border: 1px solid red;
+}
+.welcome-message h4 {
+  position: absolute;
+  font-size: 5em;
+  right: 0;
+  top: 240px;
+}
+.welcome-message h5 {
+  position: absolute;
+  font-size: 3em;
+  letter-spacing: 10px;
+  bottom: 40px;
+  right: -5px;
 }
 
 .project-container {
+  margin-top: 110vh;
   background: var(--clr-dark);
   height: 100vh;
   width: 80vw;
@@ -142,16 +222,15 @@ img {
 .all-projects {
   position: relative;
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 10vh;
   margin-bottom: 15vh;
+  margin-left: 7.5vw;
 }
 
 .display {
   position: relative;
   cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
 }
 
 .btn-container {
@@ -392,7 +471,6 @@ img {
 .tech-stack {
   margin-top: 0rem;
   margin-bottom: 2em;
-  border: 1px solid red;
 }
 .tech-stack ul {
   position: relative;
@@ -438,7 +516,7 @@ img {
   position: relative;
   height: 90vh;
   width: 80vw;
-  margin-top: 2rem;
+  margin-top: 10vh;
 }
 .about-container article {
   position: relative;
@@ -458,7 +536,7 @@ img {
 .contact-container {
   background: var(--clr-dark);
   padding: 2rem;
-  margin-top: 2rem;
+  margin-top: 10vh;
   position: relative;
   height: 90vh;
   width: 80vw;
@@ -575,6 +653,7 @@ img {
 }
 
 .resume-container {
+  display: none;
   background: var(--clr-dark);
   padding: 2rem;
   margin-top: 2rem;
@@ -603,11 +682,12 @@ img {
 
   .welcome-container {
     justify-content: center;
-    width: 25em;
+    width: 100%;
   }
   .welcome-container .welcome {
     text-align: center;
     height: auto;
+    left: 15vw;
   }
 
   .project-container {
@@ -618,6 +698,7 @@ img {
     position: relative;
     display: block;
     height: auto;
+    margin-left: 0;
   }
   .project-container .display {
     position: relative;
