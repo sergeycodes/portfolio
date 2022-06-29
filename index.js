@@ -17,28 +17,33 @@ NavToggle.addEventListener('click', ()=> {
 })
 
 
-var h2_timer;
 
-h2_timer = setInverval(function () {
-    h2animation()
-}, 2000);
-
-function stop_h2timer() {
-    clearInterval(h2_timer)
-}
-
-const h2 = document.querySelector('h2-animation')
+const hTwo = document.querySelector('.h2-animation')
+const hFour = document.querySelector('.h4-animation')
+const hFive = document.querySelector('.h5-animation')
 
 function h2animation() {
-    h2.style.display = "flex"
+    hTwo.style.display = "flex"
 }
 
 var inverval_timer;
 
-//Time in milliseconds [1 second = 1000 milliseconds ]    
+//Time in milliseconds [1 second = 1000 milliseconds ]   
 inverval_timer = setInterval(function() { 
-    console.log("5 seconds completed");
+    hTwo.style.display = "flex"
+}, 1500);
+
+inverval_timer = setInterval(function() { 
+    hFour.style.display = "flex"
+}, 2000);
+
+inverval_timer = setInterval(function() { 
+    hFive.style.display = "flex"
+}, 3500);
+
+inverval_timer = setInterval(function() { 
     welcomeMessage()
+    stop_timer()
 }, 5000);
     
 //IF you want to stop above timer

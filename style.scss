@@ -63,47 +63,45 @@ img {
     
     .primary-navigation {
       z-index: 1000;
-        list-style: none;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        background: hsl(0 0% 100% / .1);
-        backdrop-filter: blur(1rem);
+      list-style: none;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      background: hsl(0 0% 100% / .1);
+      backdrop-filter: blur(1rem);
 
-        li {
-            flex-direction: row;
-            margin: 1rem;
-        }
+      li {
+        flex-direction: row;
+        margin: 1rem;
+      }
 
-        a {
-            text-decoration: none;
-            color: rgb(216, 216, 216);
-        }
+      a {
+        text-decoration: none;
+        color: rgb(216, 216, 216);
+      }
 
-        a::after {
-            position: abs($number: 0);
-            content: "";
-            border-bottom: 1px solid rgb(255, 255, 255);
-            right: 0;
-            display: block;
-            width: 0;
-            transition-property: width;
-            transition: 250ms ease-out;
-        }
+      a::after {
+        position: abs($number: 0);
+        content: "";
+        border-bottom: 1px solid rgb(255, 255, 255);
+        right: 0;
+        display: block;
+        width: 0;
+        transition-property: width;
+        transition: 250ms ease-out;
+      }
 
-        a:hover::after {
-            left: 0;
-            right: auto;
-            width: 100%;
-        }
+      a:hover::after {
+        left: 0;
+        right: auto;
+        width: 100%;
+      }
     }
 }
 
 .mobile-nav-toggle {
-        display: none;
+  display: none;
 }
-
-
 
 .flex {
     display: flex;
@@ -125,31 +123,23 @@ img {
 
   .welcome-container {
     position: absolute;
+    display: flex;
+    justify-content: center;
     /*height: 88vh;*/
-    
     /*margin-top: 12vh;*/
     height: 100vh;
     width: 100vw;
-    
-
     background: var(--clr-dark);
 
     .welcome {
         position: relative;
         width: 600px;
-        left: 30vw;
-        top: 12vh;
-
-        
     }
-    
   }
 
   .welcome-message {
     position: absolute;
     width: 600px;
-    left: 30vw;
-    top: 12vh;
 	  display: inline-block;
 
     h1 {
@@ -198,9 +188,7 @@ img {
           overflow: hidden;
           white-space: nowrap;
           
-          animation: typing 1s steps(100, end), blink .75s step-end infinite;
-          animation-delay: 2s;
-          border: 1px solid red;
+          animation: typing 500ms steps(100, end), blink .75s step-end infinite;
         }
 
         @keyframes typing {
@@ -208,20 +196,49 @@ img {
           to{width: 100%;}
         }
         
-
-        h4 {
+        .h4 {
           position: absolute;
-          font-size: 5em;
           right: 0;
           top: 240px;
         }
 
-        h5 {
+       .h4-animation {
+        display: none;
+          position: relative;
+          font-size: 5em;
+
+          overflow: hidden;
+          white-space: nowrap;
+
+          animation: typing 500ms steps(100, end), blink .75s step-end infinite;
+        }
+
+        @keyframes typing {
+          from{width: 0;}
+          to{width: 100%;}
+        }
+
+        .h5 {
           position: absolute;
-          font-size: 3em;
-          letter-spacing: 10px;
           bottom: 40px;
           right: -5px;
+        }
+
+        .h5-animation {
+          display: none;
+          position: relative;
+          font-size: 3em;
+          letter-spacing: 10px;
+
+          overflow: hidden;
+          white-space: nowrap;
+          
+          animation: typing 1s steps(100, end), blink .75s step-end infinite;
+        }
+
+        @keyframes typing {
+          from{width: 0;}
+          to{width: 100%;}
         }
   }
 
