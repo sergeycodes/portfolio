@@ -33,10 +33,10 @@
 
        <div class="nav-list">
         <ul class="primary-navigation flex" data-visible="false" id="primary-navigation" >
-            <li><a href="#">Projects<span></span></a></li>
-            <li><a href="#">About<span></span></a></li>
-            <li><a href="#">Skills<span></span></a></li>
-            <li><a href="#">Contact<span></span></a></li>
+            <li><a href="#project-container">Projects<span></span></a></li>
+            <li><a href="#about-container">About<span></span></a></li>
+            <li><a href="#project-container">Skills<span></span></a></li>
+            <li><a href="#contact-container">Contact<span></span></a></li>
             <!--<li><a href="#">Resume<span></span></a></li>-->
         </ul>
        </div>
@@ -59,12 +59,11 @@
     </div>
             
         </div>
-        
+        <div id="project-container"></div>
     </div>
     
-        
+      
     <div class="project-container">
-        
 
         <article>
             <h1>My Projects</h1>
@@ -90,11 +89,11 @@
       
             <div class="back">
               <div class="project-info">
-                <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, beatae.</p>
+                <p class="project-description">A free online Lease Agreement Form with a step by step user interaction with a pdf download once finished</p>
               </div>
               <div class="btn-container">
-                <button class="btn">See Code</button>
-                <button class="btn">See Live</button>
+                <button class="btn"><a href="https://sergeycodes.github.io/leaseagreementform/" rel="noopener" target="_blank">See Live</a></button>
+                <button class="btn"><a href="https://github.com/sergeycodes/leaseagreementform" rel="noopener" target="_blank">See Code</a></button>
               </div>
               
               <div class="projects">
@@ -151,11 +150,11 @@
       
             <div class="back">
               <div class="project-info">
-                <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, beatae.</p>
+                <p class="project-description">A chrome extension calculator that is easy to download and use on google chrome, see live for a demo of how the extension looks like</p>
               </div>
               <div class="btn-container">
-                <button class="btn">See Code</button>
-                <button class="btn">See Live</button>
+                <button class="btn"><a href="https://sergeycodes.github.io/calculator/" rel="noopener" target="_blank">See Live</a></button>
+                <button class="btn"><a href="https://github.com/sergeycodes/calculator" rel="noopener" target="_blank">See Code</a></button>
               </div>
               
               <div class="projects">
@@ -212,11 +211,11 @@
       
             <div class="back">
               <div class="project-info">
-                <p class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, beatae.</p>
+                <p class="project-description">A website that allows users to build their own aquarium and learn about fish keeping</p>
               </div>
               <div class="btn-container">
-                <button class="btn">See Code</button>
-                <button class="btn">See Live</button>
+                <button class="btn"><a href="https://buildaquarium.net/" rel="noopener" target="_blank">See Live</a></button>
+                <button class="btn"><a href="https://github.com/sergeycodes/buildaquarium" rel="noopener" target="_blank">See Code</a></button>
               </div>
               
               <div class="projects">
@@ -256,9 +255,10 @@
             </defs>
           </svg>
 
+          
         </div>
-        
         <div class="tech-stack">
+          <div id="skills-container"></div>
             <ul>
                 <li class="text-title"><h2>Tech Stack</h2></li>
                 <li><div><img src="images/java.png" alt=""><h3>Java</h3></div></li>
@@ -267,13 +267,14 @@
                 <li><div><img src="images/nodejs.png" alt=""><h3>Node.js</h3></div></li>
                 <li><div><img src="images/sass.png" alt=""><h3>Sass</h3></div></li>
                 <li><div><img src="images/jquery.png" alt="" class="white"><h3>Jquery</h3></div></li>
-            </ul>
+            </ul> 
         </div>
           
-        
+       
     </div>
 
     <div class="about-container">
+      <div id="about-container"></div>
         <article>
           <h1>About Me</h1>
           <p>
@@ -286,6 +287,8 @@
             fishkeeping, and aquascaping. 
           </p>
         </article>
+
+        <div id="contact-container"></div>
     </div>
     
     <div class="contact-container">
@@ -328,6 +331,8 @@
             </form>
         </div>
       </div>
+
+      <div id="resume-container"></div>
     </div>
     
     <div class="resume-container">
