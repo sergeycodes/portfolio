@@ -25,7 +25,7 @@ body {
   overflow-x: hidden;
   background: var(--clr-dark);
   color: var(--clr-light);
-  background: url(images/space.jpg) no-repeat center center fixed;
+  background: url(images/space-3.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
