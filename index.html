@@ -332,8 +332,11 @@
             </form>
             <script src="https://smtpjs.com/v3/smtp.js"></script>
             <script>
-              var messageToSend =  document.getElementById('username').value;
               function sendEmail() {
+                const NAME = document.getElementById("username").value;
+                const EMAIL = document.getElementById("email").value;
+                const MESSAGE =  document.getElementById("message").value;
+                const messageToSend = "Name: " + NAME + "\nEmail: " + EMAIL + "\nMessage: " + MESSAGE;
                 Email.send({
                   Host : "smtp.elasticemail.com",
                   Username : "sbarzul91@gmail.com",
