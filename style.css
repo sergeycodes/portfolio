@@ -602,8 +602,9 @@ img {
   background: var(--clr-dark);
   padding: 2rem;
   margin-top: 10vh;
+  margin-bottom: 10vh;
   position: relative;
-  height: 90vh;
+  height: 75vh;
   width: 80vw;
 }
 .contact-container article {
@@ -702,7 +703,7 @@ img {
   font-size: 12px;
   transform: translateY(-20px);
 }
-.contact-container .contactForm .inputBox input[type=submit] {
+#send-btn {
   width: 100px;
   background: var(--clr-dark);
   color: #fff;
@@ -850,3 +851,7 @@ img {
     margin-left: -15%;
   }
 }/*# sourceMappingURL=style.css.map */
+
+html {
+  scroll-behavior: smooth;
+}

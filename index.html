@@ -261,6 +261,7 @@
           <div id="skills-container"></div>
             <ul>
                 <li class="text-title"><h2>Tech Stack</h2></li>
+                <li><div><img src="images/cpp.png" alt=""><h3>C++</h3></div></li>
                 <li><div><img src="images/java.png" alt=""><h3>Java</h3></div></li>
                 <li><div><img src="images/js.png" alt=""><h3>Javascript</h3></div></li>
                 <li><div><img src="images/react.png" alt=""><h3>React</h3></div></li>
@@ -279,7 +280,7 @@
           <h1>About Me</h1>
           <p>
             Hi, my name is Sergey. I was born in Ukraine and grew up in Washington. I've always had a passion 
-            for puzzle solving and that excitement transfered academically in classes like Math. A little over 
+            for puzzle solving and that excitement transfered academically. A little over 
             a year ago I took a computer science class to see what branch of engineering I wanted to study, and 
             ever since then I've fallen in love with programming. I am currently studying Computer Science and 
             Software Engineering at the University of Washington, and on my free time I've been studying other 
@@ -288,7 +289,7 @@
           </p>
         </article>
 
-        <div id="contact-container"></div>
+        
     </div>
     
     <div class="contact-container">
@@ -307,26 +308,26 @@
               <li><img src="images/github-logo.png" alt="" class="invert"></li>
             </ul>
             
-            
+            <div id="contact-container"></div>
           </div>
 
           <div class="contactForm">
-            <form onsubmit="sendEmail(); reset(); return false;">
+            <form onsubmit="sendMessage()">
                 <h2>Send Message</h2>
                 <div class="inputBox">
-                    <input type="text" name ="" required="required" id="name">
+                    <input type="text" name ="" required="required" id="name" value="" onclick="defaultMessageBox()">
                     <span>Full Name</span>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name ="" required="required" id="email">
+                    <input type="text" name ="" required="required" id="email" value="" onclick="defaultMessageBox()">
                     <span>Email</span>
                 </div>
                 <div class="inputBox">
-                    <textarea name="" id="message" cols="30" rows="3" required></textarea>
+                    <textarea name="" id="message" cols="30" rows="3" required onclick="defaultMessageBox()"></textarea>
                     <span>Type Your Message...</span>
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="Send">
+                    <input type="submit" value="Send" id="send-btn">
                 </div>
             </form>
         </div>

@@ -61,3 +61,30 @@ function welcomeMessage() {
     projectEl.style.marginTop = "100vh"
     navbar.style.top = "0"
 }
+
+const sendBtn = document.getElementById('send-btn');
+function sendMessage() {
+    clearMessageBox();
+    sentAnimation();
+}
+
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const message = document.getElementById('message');
+
+function clearMessageBox() {
+    name.value = "";
+    email.value = "";
+    message.value = "";
+}
+
+function sentAnimation() {
+    sendBtn.style.backgroundColor = "green";
+   // sendBtn.setAttribute('value', 'Sent!');
+   sendBtn.value = "Sent!";
+}
+
+function defaultMessageBox() {
+    sendBtn.style.backgroundColor = "var(--clr-dark)";
+    sendBtn.value = "Send";
+}
