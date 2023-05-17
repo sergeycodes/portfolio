@@ -1,3 +1,5 @@
+
+
 const primaryNav = document.querySelector('.primary-navigation')
 const NavToggle = document.querySelector('.mobile-nav-toggle')
 const welcomeEl = document.querySelector('.welcome-container')

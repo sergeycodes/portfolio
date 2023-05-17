@@ -315,11 +315,11 @@
             <form onsubmit="sendEmail(); sendMessage(); reset(); return false">
                 <h2>Send Message</h2>
                 <div class="inputBox">
-                    <input type="text"  required="required" id="username" value="" onclick="defaultMessageBox()">
+                    <input type="name" name="name" required="required" id="username" value="" onclick="defaultMessageBox()">
                     <span>Full Name</span>
                 </div>
                 <div class="inputBox">
-                    <input type="text"  required="required" id="email" value="" onclick="defaultMessageBox()">
+                    <input type="email" name="email" required="required" id="email" value="" onclick="defaultMessageBox()">
                     <span>Email</span>
                 </div>
                 <div class="inputBox">
@@ -332,15 +332,16 @@
             </form>
             <script src="https://smtpjs.com/v3/smtp.js"></script>
             <script>
+              var messageToSend =  document.getElementById('username').value;
               function sendEmail() {
                 Email.send({
                   Host : "smtp.elasticemail.com",
                   Username : "sbarzul91@gmail.com",
                   Password : "CF20A5D7EC48BB59EF8939AF4D18B3274021",
                   To : 'sbarzul91@gmail.com',
-                  From: document.getElementById("email").value,
+                  From: "sbarzul91@gmail.com",
                   Subject : "Contact Form",
-                  Body : "BODY"
+                  Body : messageToSend
                 }).then(
                   message => alert(message)
                 );
