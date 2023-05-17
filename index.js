@@ -64,23 +64,23 @@ function welcomeMessage() {
 
 const sendBtn = document.getElementById('send-btn');
 function sendMessage() {
+ 
     clearMessageBox();
     sentAnimation();
 }
 
-const name = document.getElementById('name');
+const username = document.getElementById('username');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
 
 function clearMessageBox() {
-    name.value = "";
+    username.value = "";
     email.value = "";
     message.value = "";
 }
 
 function sentAnimation() {
     sendBtn.style.backgroundColor = "green";
-   // sendBtn.setAttribute('value', 'Sent!');
    sendBtn.value = "Sent!";
 }
 
