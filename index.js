@@ -63,8 +63,14 @@ function welcomeMessage() {
 }
 
 const sendBtn = document.getElementById('send-btn');
+sendBtn.addEventListener('click', function(e){
+    let x = e.clientX - e.target.offsetLeft;
+    let y = e.clientY - e.target.offsetTop;
+
+    l
+})
+
 function sendMessage() {
- 
     clearMessageBox();
     sentAnimation();
 }
@@ -77,9 +83,13 @@ function clearMessageBox() {
     username.value = "";
     email.value = "";
     message.value = "";
+    sendBtn.style.backgroundSize = "0% 0%";
 }
 
+
 function sentAnimation() {
+    
+    sendBtn.style.backgroundSize = "100% 100%";
     sendBtn.style.backgroundColor = "green";
    sendBtn.value = "Sent!";
 }
@@ -88,3 +98,4 @@ function defaultMessageBox() {
     sendBtn.style.backgroundColor = "var(--clr-dark)";
     sendBtn.value = "Send";
 }
+

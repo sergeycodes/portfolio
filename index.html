@@ -312,14 +312,14 @@
           </div>
 
           <div class="contactForm">
-            <form onsubmit="sendMessage()">
+            <form onsubmit="sendEmail(); sendMessage(); reset(); return false">
                 <h2>Send Message</h2>
                 <div class="inputBox">
-                    <input type="text" name ="" required="required" id="username" value="" onclick="defaultMessageBox()">
+                    <input type="text"  required="required" id="username" value="" onclick="defaultMessageBox()">
                     <span>Full Name</span>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name ="" required="required" id="email" value="" onclick="defaultMessageBox()">
+                    <input type="text"  required="required" id="email" value="" onclick="defaultMessageBox()">
                     <span>Email</span>
                 </div>
                 <div class="inputBox">
@@ -330,6 +330,20 @@
                     <input type="submit" value="Send" id="send-btn">
                 </div>
             </form>
+            <script src="https://smtpjs.com/v3/smtp.js"></script>
+            <script>
+              function sendEmail() {
+                Email.send({
+                  SecureToken: "9b4dc340-6528-4265-b728-f9d39a5e642f",
+                  To : 'sbarzul91@gmail.com',
+                  From : document.getElementById("email").value,
+                  Subject : "Contact Form",
+                  Body : "BODY"
+                }).then(
+                  message => alert(message)
+                );
+              }
+            </script>
         </div>
       </div>
 
@@ -346,6 +360,8 @@
       <img src="#" alt="" class="resume">
         
     </div>
+
+  
 
     <script src="index.js"></script>
     <script>

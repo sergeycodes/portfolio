@@ -670,6 +670,7 @@ img {
   font-weight: 500;
 }
 .contact-container .contactForm .inputBox {
+  display: flex;
   position: relative;
   width: 100%;
   margin-top: 10px;
@@ -704,7 +705,9 @@ img {
   transform: translateY(-20px);
 }
 #send-btn {
+  display: inline-block;
   width: 100px;
+  height: 50px;
   background: var(--clr-dark);
   color: #fff;
   border: none;
@@ -712,7 +715,15 @@ img {
   padding: 10px;
   font-size: 18px;
   border-radius: 4px;
+
+  background-size: 0 0;
+  transition: 0.8s;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-timing-function:cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  
 }
+
 
 .projects .white {
   background-color: #fff;
